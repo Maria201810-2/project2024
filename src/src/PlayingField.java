@@ -305,6 +305,11 @@ public class PlayingField extends JFrame {
     }
 
     public void rePaint() {
+        for (int g=0;g<9;g++){
+            if (mybuttons[8][g].sravnenie(NotUserElement)){
+                mybuttons[8][g].setValue(NoElement);
+            }
+        }
         check1(mybuttons);
         check2(mybuttons);
         boolean marker = false;
@@ -322,6 +327,11 @@ public class PlayingField extends JFrame {
                     if (mybuttons[i][j].sravnenie(NoElement) && !mybuttons[i - 1][j].sravnenie(NoElement)) {
                         marker = false;
                     }
+                }
+            }
+            for (int g=0;g<9;g++){
+                if (mybuttons[8][g].sravnenie(NotUserElement)){
+                    marker=false;
                 }
             }
         }
