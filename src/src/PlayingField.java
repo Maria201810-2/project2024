@@ -75,12 +75,14 @@ public class PlayingField extends JFrame {
                         else if (x0==x1 && y0==y1) {
                             switch (btn.getnznn()){
                                 case 7:
+                                    mybuttons[x0][y0].delBackground();
                                     for (int q=0;q<9;q++){
                                         mybuttons[x0][q].setValue(NoElement);
                                     }
                                     rePaint();
                                     break;
                                 case 8:
+                                    mybuttons[x0][y0].delBackground();
                                     for (int q=0;q<9;q++){
                                         mybuttons[q][y0].setValue(NoElement);
                                     }
@@ -90,8 +92,11 @@ public class PlayingField extends JFrame {
                                     btn.delBackground();
                             }
                         }
-                        else if (((x0==x1 && Math.abs(y0-y1)==1) || (y0==y1 && Math.abs(x0-x1)==1)) && (btn.sravnenie(SpecialElement) || mybuttons[x1][y1].sravnenie(SpecialElement))){
+                        else if (((x0==x1 && Math.abs(y0-y1)==1) || (y0==y1 && Math.abs(x0-x1)==1)) && (btn.sravnenie(SpecialElement) || mybuttons[x1][y1].sravnenie(SpecialElement)) && !mybuttons[x1][y1].sravnenie(NotUserElement) && !btn.sravnenie(NotUserElement)){
                             int znver=Math.min(mybuttons[x1][y1].getnznn(),mybuttons[x0][y0].getnznn());
+                            mybuttons[x1][y1].delBackground();
+                            mybuttons[x0][y0].setValue(NoElement);
+                            mybuttons[x1][y1].setValue(NoElement);
                             for (int i=0;i<9;i++){
                                 for (int j=0;j<9;j++){
                                     if (mybuttons[i][j].getnznn()==znver){
