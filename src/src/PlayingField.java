@@ -90,10 +90,10 @@ public class PlayingField extends JFrame {
                                     btn.delBackground();
                             }
                         }
-                        else if ((x0==x1 && Math.abs(y0-y1)==1) || (y0==y1 && Math.abs(x0-x1)==1) && btn.sravnenie(SpecialElement) || mybuttons[x1][y1].sravnenie(SpecialElement)){
+                        else if (((x0==x1 && Math.abs(y0-y1)==1) || (y0==y1 && Math.abs(x0-x1)==1)) && (btn.sravnenie(SpecialElement) || mybuttons[x1][y1].sravnenie(SpecialElement))){
                             int znver=Math.min(mybuttons[x1][y1].getnznn(),mybuttons[x0][y0].getnznn());
                             for (int i=0;i<9;i++){
-                                for (int j=0;j<0;j++){
+                                for (int j=0;j<9;j++){
                                     if (mybuttons[i][j].getnznn()==znver){
                                         mybuttons[i][j].setValue(NoElement);
                                     }

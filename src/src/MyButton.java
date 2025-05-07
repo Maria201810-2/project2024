@@ -55,8 +55,6 @@ public class MyButton extends JButton {
         a.znn=t;
         setmyIcon(this.znn);
         a.setmyIcon(a.getnznn());
-        //setText(String.valueOf(znn));
-        //a.setText(String.valueOf(a.znn));
     }
     public void setmyIcon(int a){
         String Path;
