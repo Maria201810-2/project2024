@@ -332,6 +332,7 @@ public class PlayingField extends JFrame {
             for (int g=0;g<9;g++){
                 if (mybuttons[8][g].sravnenie(NotUserElement)){
                     marker=false;
+                    mybuttons[8][g].setValue(NoElement);
                 }
             }
         }
