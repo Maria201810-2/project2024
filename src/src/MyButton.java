@@ -5,60 +5,57 @@ public class MyButton extends JButton {
     protected int x;
     protected int y;
     protected int znn;
-    public MyButton(int i, int j, int z) {
+    public MyButton(int x, int y, int znn) {
         super();
-        this.x = i;
-        this.y = j;
-        this.znn = z;
-        Color d=new Color(238,238,238);
-        super.setBackground(d);
-        setmyIcon(z);
+        this.x = x;
+        this.y = y;
+        this.znn = znn;
+        super.setBackground(new Color(238,238,238));
+        setMyIcon(znn);
     }
     public void setValue(int value){
         this.znn = value;
-        setmyIcon(value);
+        setMyIcon(value);
     }
-    public boolean sravnenie(int a){
+    public boolean compareNumber(int a){
         return (this.znn==a);
     }
-    public boolean sravn(MyButton my){
+    public boolean compareButton(MyButton my){
         return (this.znn==my.znn);
     }
     public void setBackground() {
-        Color cl=new Color(0,255,255);
-        super.setBackground(cl);
+        super.setBackground(new Color(0,255,255));
     }
     public void delBackground(){
-        Color cl=new Color(238,238,238);
-        super.setBackground(cl);
+        super.setBackground(new Color(238,238,238));
     }
-    public int getkx(){
+    public int getKX(){
         return this.x;
     }
-    public int getky(){
+    public int getKY(){
         return this.y;
     }
-    public int getnznn(){
+    public int getnZnn(){
         return this.znn;
     }
-    public boolean getBackgr(){
-        boolean sost=false;
-        Color zv=super.getBackground();
-        if (zv.getRed()==0 && zv.getGreen()==255 && zv.getBlue()==255){
-            sost=true;
+    public boolean getBack(){
+        boolean testPressButton=false;
+        Color colorButton=super.getBackground();
+        if (colorButton.getRed()==0 && colorButton.getGreen()==255 && colorButton.getBlue()==255){
+            testPressButton=true;
         }
-        return sost;
+        return testPressButton;
     }
-    public void Exchangeznn(MyButton a){
+    public void exchangeZnn(MyButton a){
         int t=this.znn;
-        this.znn=a.getnznn();
+        this.znn=a.getnZnn();
         a.znn=t;
-        setmyIcon(this.znn);
-        a.setmyIcon(a.getnznn());
+        setMyIcon(this.znn);
+        a.setMyIcon(a.getnZnn());
     }
-    public void setmyIcon(int a){
+    public void setMyIcon(int elementNumber){
         String Path;
-        switch (a){
+        switch (elementNumber){
             case 1:
                 Path="MyImages/flower.png";
                 break;
